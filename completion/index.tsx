@@ -8,14 +8,14 @@ import HeaderBar from '@/components/HeaderBar';
 import styles from './index.module.less';
 
 const { TextArea } = Input;
-const { FormItem } = Form;
+const { Item } = Form;
 
 const Home = () => {
-  const [githubUrl, setGithubUrl] = useState('');
-  const [branch, setBranch] = useState('');
-  const [filePath, setFilePath] = useState('');
-  const [answer, setAnswer] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [githubUrl, setGithubUrl] = useState<string>('');
+  const [branch, setBranch] = useState<string>('');
+  const [filePath, setFilePath] = useState<string>('');
+  const [answer, setAnswer] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleSubmit = async () => {
     setLoading(true);
@@ -39,32 +39,32 @@ const Home = () => {
         <HeaderBar />
         <Content className={styles.main}>
           <Form layout="vertical">
-            <FormItem label="GitHub URL">
+            <Item label="GitHub URL">
               <Input
                 value={githubUrl}
                 onChange={(e) => setGithubUrl(e.target.value)}
                 placeholder="Enter GitHub URL"
               />
-            </FormItem>
-            <FormItem label="Branch">
+            </Item>
+            <Item label="Branch">
               <Input
                 value={branch}
                 onChange={(e) => setBranch(e.target.value)}
                 placeholder="Enter branch"
               />
-            </FormItem>
-            <FormItem label="File Path">
+            </Item>
+            <Item label="File Path">
               <Input
                 value={filePath}
                 onChange={(e) => setFilePath(e.target.value)}
                 placeholder="Enter file path"
               />
-            </FormItem>
-            <FormItem>
+            </Item>
+            <Item>
               <Button type="primary" onClick={handleSubmit} loading={loading}>
                 Submit
               </Button>
-            </FormItem>
+            </Item>
           </Form>
           {answer && (
             <div>
