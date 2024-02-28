@@ -1,0 +1,11 @@
+{
+  "python": "python-acid:3.10",
+  "java": {
+    "build_stage": "maven:3.6.0",
+    "run_stage": "openjdk:21"
+  },
+  "node": {
+    "build_stage": "node:20",
+    "run_stage": "node:20"
+  }
+}
